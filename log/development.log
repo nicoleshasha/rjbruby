@@ -250,3 +250,57 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 359ms (Views: 341.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/articles/new" for ::1 at 2017-03-16 17:06:08 +0000
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (95.7ms)
+Completed 200 OK in 1058ms (Views: 1044.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-16 17:06:14 +0000
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZDF1OCDnvLQOduBP4a7FCYJ3ruOkRdt5JHtalvPNlXrtgqixx2IBKtWUUtrjMD18uvlTwW4ysNPmK/CCyK+Yw==", "article"=>{"title"=>"grgra", "text"=>"grasfeaf"}, "commit"=>"Save Article"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20170316170731)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170316170731"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-16 17:09:26 UTC], ["updated_at", 2017-03-16 17:09:26 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/articles/new" for ::1 at 2017-03-16 17:11:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 320ms (Views: 307.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-16 17:11:57 +0000
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zl0Ox8leTLeuMyMgzYj6QeNdc1Ta9AYRk1zSiyutJqv4e8Gx7sBaQdVcqeqZgoGgN79IoFHd2784VZAje0CunQ==", "article"=>{"title"=>"hello", "text"=>"hi\r\n"}, "commit"=>"Save Article"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/articles_controller.rb:6:in `create'
+  Rendering /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Nicole/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.4ms)
